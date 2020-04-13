@@ -8,10 +8,12 @@
 
 import UIKit
 
-class PhotoCollectionViewController: UICollectionViewController {
+class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,6 +21,8 @@ class PhotoCollectionViewController: UICollectionViewController {
         collectionView?.reloadData()
         setTheme()
     }
+    
+    
     
     // MARK: UICollectionViewDataSource
     
@@ -52,6 +56,23 @@ class PhotoCollectionViewController: UICollectionViewController {
         }
         
         collectionView?.backgroundColor = backgroundColor
+    }
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let insets = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        return insets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+        let size = CGSize(width: 250, height: 275)
+        return size
     }
     
     // MARK: - Navigation
