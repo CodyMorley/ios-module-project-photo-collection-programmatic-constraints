@@ -18,6 +18,13 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var photoController: PhotoController?
     var themeHelper: ThemeHelper?
     
+    init(frame: CGRect) {
+        super.init(frame: frame)
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +33,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func setUpSubviews() {
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        addSubview(imageView)
+        
         
     }
     
