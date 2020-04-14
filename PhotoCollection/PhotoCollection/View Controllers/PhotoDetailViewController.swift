@@ -23,6 +23,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     
     override func viewDidLoad() {
@@ -35,7 +39,15 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     func setUpSubviews() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        addSubview(imageView)
+        view.addSubview(imageView)
+        
+        let button = UIButton()
+        button.setTitle("Add Image", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.target(forAction: , withSender: <#T##Any?#>)
+        
+        
+        
         
         
     }
