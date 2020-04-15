@@ -31,6 +31,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         self.imageView = imageView
+        view.addSubview(self.imageView)
         
         let button = UIButton(type: .system)
         button.setTitle("Add Image", for: .normal)
@@ -43,6 +44,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         textField.placeholder = "Title your photo here:"
         textField.textAlignment = .left
         self.titleTextField = textField
+        view.addSubview(self.titleTextField)
         
         let barButton = UIBarButtonItem()
         barButton.title = "Save Photo"
@@ -62,8 +64,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 6).isActive = true
         button.leadingAnchor.constraint(equalTo: textField.leadingAnchor, constant: 0).isActive = true
         button.trailingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 0).isActive = true
-        
-        
     }
     
     
