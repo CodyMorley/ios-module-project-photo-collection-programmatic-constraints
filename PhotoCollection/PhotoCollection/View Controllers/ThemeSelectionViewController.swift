@@ -12,6 +12,11 @@ class ThemeSelectionViewController: UIViewController {
 
     var themeHelper: ThemeHelper?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpSubviews()
+    }
+    
     func setUpSubviews() {
         let darkButton = UIButton(type: .system)
         darkButton.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +30,13 @@ class ThemeSelectionViewController: UIViewController {
         blueButton.target(forAction: #selector(selectBlueTheme), withSender: self)
         view.addSubview(blueButton)
         
+        darkButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        darkButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+        darkButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20).isActive = true
+        
+        blueButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        blueButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30).isActive = true
+        blueButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20).isActive = true
         
     }
     
