@@ -21,13 +21,13 @@ class ThemeSelectionViewController: UIViewController {
         let darkButton = UIButton(type: .system)
         darkButton.translatesAutoresizingMaskIntoConstraints = false
         darkButton.setTitle("Dark Theme", for: .normal)
-        darkButton.target(forAction: #selector(selectDarkTheme), withSender: self)
+        darkButton.addTarget(self, action: #selector(selectDarkTheme), for: .touchUpInside)
         view.addSubview(darkButton)
         
         let blueButton = UIButton(type: .system)
         blueButton.translatesAutoresizingMaskIntoConstraints = false
         blueButton.setTitle("Blue Theme", for: .normal)
-        blueButton.target(forAction: #selector(selectBlueTheme), withSender: self)
+        blueButton.addTarget(self, action: #selector(selectBlueTheme), for: .touchUpInside)
         view.addSubview(blueButton)
         
         darkButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
@@ -35,8 +35,8 @@ class ThemeSelectionViewController: UIViewController {
         darkButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20).isActive = true
         
         blueButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
-        blueButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30).isActive = true
-        blueButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20).isActive = true
+        blueButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        blueButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20).isActive = true
         
     }
     
